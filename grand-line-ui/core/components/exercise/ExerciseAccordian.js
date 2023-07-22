@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
 import {
-  StyleSheet,
-  Text,
-  TouchableOpacity
+	SafeAreaView,
+	ScrollView,
+	StyleSheet,
+	Text,
+	TouchableOpacity,
+	View
 } from 'react-native';
 import * as Animatable from 'react-native-animatable';
 import Accordion from 'react-native-collapsible/Accordion';
 import BodyParts from '../bodyParts/BodyParts';
-import ExerciseGrid from './ExerciseGrid';
+import ExerciseSearch from './ExerciseSearch';
 
 
 
@@ -32,6 +35,7 @@ const ExerciseAccordian = props => {
     //setting up a active section state
     setActiveSections(sections.includes(undefined) ? [] : sections);
   };
+  
 
   const CONTENT = [
     {
@@ -40,7 +44,7 @@ const ExerciseAccordian = props => {
     },
     {
       title: 'Select Exercise',
-      content: <ExerciseGrid/>
+      content: <ExerciseSearch/>
     },
     {
       title: 'Pick Stared Exercise',
@@ -85,28 +89,35 @@ const ExerciseAccordian = props => {
     );
   };
   return (
-     
-     <Accordion
-     activeSections={activeSections}
-     //for any default active section
-     sections={CONTENT}
-     //title and content of accordion
-     touchableComponent={TouchableOpacity}
-     //which type of touchable component you want
-     //It can be the following Touchables
-     //TouchableHighlight, TouchableNativeFeedback
-     //TouchableOpacity , TouchableWithoutFeedback
+    <SafeAreaView style={{ flex: 1 }}>
+		<View style={styles.container}>
+			<ScrollView>
+				<Accordion
+				activeSections={activeSections}
+				//for any default active section
+				sections={CONTENT}
+				//title and content of accordion
+				touchableComponent={TouchableOpacity}
+				//which type of touchable component you want
+				//It can be the following Touchables
+				//TouchableHighlight, TouchableNativeFeedback
+				//TouchableOpacity , TouchableWithoutFeedback
+			
+				//Do you want to expand mutiple at a time or single at a time
+				renderHeader={renderHeader}
+				//Header Component(View) to render
+				renderContent={renderContent}
+				//Content Component(View) to render
+				duration={400}
+				//Duration for Collapse and expand
+				onChange={setSections}
+				//setting the state of active sections
+				/>
+			</ScrollView>
+
+		</View>
+   </SafeAreaView>
    
-     //Do you want to expand mutiple at a time or single at a time
-     renderHeader={renderHeader}
-     //Header Component(View) to render
-     renderContent={renderContent}
-     //Content Component(View) to render
-     duration={400}
-     //Duration for Collapse and expand
-     onChange={setSections}
-     //setting the state of active sections
-   />
  
   )
 }
