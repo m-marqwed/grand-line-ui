@@ -1,11 +1,28 @@
-import React from 'react'
+import React, { useState } from 'react';
+import { FlatList } from "react-native";
+import loadedBodyParts from "../../../utils/bodyparts";
+import BodyPart from './BodyPart';
 
 const BodyParts = props => {
+
+
+  const [bodyPartsAdded,setBodyParts] =  useState([])
   return (
-    <div>BodyParts</div>
+    <FlatList  data={loadedBodyParts} 
+                renderItem={
+                    ({item}) => <BodyPart
+                    bodyparts={bodyPartsAdded}
+                     setBodyParts={setBodyParts}
+                     bodyPart={item}
+                   />
+                }
+            >
+                
+    </FlatList>
+    
   )
 }
 
-BodyParts.propTypes = {}
+
 
 export default BodyParts
