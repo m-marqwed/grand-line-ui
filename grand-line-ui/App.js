@@ -1,12 +1,21 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { StyleSheet } from 'react-native';
 
+import Exercise from './components/Exercise';
+import ExerciseCard from './components/ExerciseCard';
+import SearchExercise from './components/SearchExercise';
+const Stack = createNativeStackNavigator();
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>We are off</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+      
+      <Stack.Screen name="SearchExercise" component={SearchExercise} />
+        <Stack.Screen name="ExerciseCard" component={ExerciseCard} />
+        <Stack.Screen name="Exercise" component={Exercise} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
