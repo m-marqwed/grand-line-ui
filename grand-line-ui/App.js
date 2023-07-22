@@ -4,7 +4,7 @@ import { StyleSheet } from 'react-native';
 
 import Exercise from './components/Exercise';
 import SearchExercise from './components/SearchExercise';
-import ExerciseCard from './core/components/exercise/ExerciseCard';
+import ExerciseGrid from './core/components/exercise/ExerciseGrid';
 
 import React from 'react';
 
@@ -16,7 +16,7 @@ export default function App() {
       <Stack.Navigator>
      
       
-        <Stack.Screen name="ExerciseCard" component={ExerciseCard} />
+        <Stack.Screen name="ExerciseGrid" component={ExerciseGrid} />
         <Stack.Screen name="SearchExercise" component={SearchExercise} />
         <Stack.Screen name="Exercise" component={Exercise} />
       </Stack.Navigator>

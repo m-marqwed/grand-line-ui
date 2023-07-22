@@ -4,16 +4,8 @@ import { Button, Card, Text } from 'react-native-paper';
 
 
 
-const ExerciseCard = (props) => {
-    //const exercise = props.exercise
-    const exercise = {
-      bodyPart: "waist",
-      equipment: "body weight",
-      gifUrl: "https://edb-4rme8.ondigitalocean.app/image/KA1FtnWyBLH8SJ",
-      id: "0001",
-      name: "3/4 sit-up",
-      target: "abs"
-    }
+const ExerciseCard = ({exercise}) => {
+   
     return(
         
     <Card>
