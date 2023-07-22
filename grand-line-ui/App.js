@@ -3,8 +3,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { StyleSheet } from 'react-native';
 
 import Exercise from './components/Exercise';
-import SearchExercise from './components/SearchExercise';
-import ExerciseGrid from './core/components/exercise/ExerciseGrid';
+import ExerciseAccordian from './core/components/exercise/ExerciseAccordian';
 
 import React from 'react';
 
@@ -16,8 +15,8 @@ export default function App() {
       <Stack.Navigator>
      
       
-        <Stack.Screen name="ExerciseGrid" component={ExerciseGrid} />
-        <Stack.Screen name="SearchExercise" component={SearchExercise} />
+        <Stack.Screen name="ExerciseAccordian" component={ExerciseAccordian} />
+       
         <Stack.Screen name="Exercise" component={Exercise} />
       </Stack.Navigator>
     </NavigationContainer>
