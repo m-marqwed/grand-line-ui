@@ -1,8 +1,9 @@
 import React from 'react'
+import ExerciseListItem from './ExerciseListItem'
 
-const ExerciseList = props => {
+const ExerciseList = ({exerciseSet}) => {
   return (
-    <div>ExerciseList</div>
+    <ExerciseListItem exerciseSet={exerciseSet}>ExerciseList</ExerciseListItem>
   )
 }
 

@@ -1,8 +1,9 @@
 import React from 'react'
+import ExerciseList from './ExerciseList'
 
 const ExerciseViewer = props => {
   return (
-    <div>ExerciseViewer</div>
+    <ExerciseList exerciseSet={props.route.params.excerciseSet}></ExerciseList>
   )
 }
 

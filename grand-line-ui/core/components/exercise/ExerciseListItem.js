@@ -1,8 +1,16 @@
-import React from 'react'
+import { ListItem } from "@react-native-material/core";
+import React from 'react';
 
-const ExerciseListItem = props => {
+const ExerciseListItem = ({exerciseSet}) => {
+  const message = `Weight: ${exerciseSet.weight} Reps: ${exerciseSet.repitions}`
   return (
-    <div>ExerciseListItem</div>
+    <>
+    <ListItem
+      title={exerciseSet.exercise.name}
+      secondaryText={message}
+    />
+   
+  </>
   )
 }
 
